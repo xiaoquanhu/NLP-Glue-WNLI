@@ -15,6 +15,7 @@ if args.model == "logistic_regression":
 elif args.model == "GRU":
     run_bash("python3 train_gru.py")
 elif args.model == "external_GRU":
+    run_bash("python3 readGlov.py")
     run_bash("python3 train_externalgru.py")
 elif args.model == "transformers":
     run_bash("python3 train_transformer.py")
