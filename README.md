@@ -1,14 +1,15 @@
-# NLP-Glue-WNLI
+# NLP: different NLP models from linear regression to RNN-GRU and to transformers, experimenting on Glue-WNLI dataset.
 
+By simple command line, you can choose which model you want to experiment on:
 Quick demonstration in command line: $ python3 run_bash.py [-model (logistic_regression GRU external_GRU transformers)]
 
-For example, use logistic regression model: $ python3 run_bash.py logistic_regression  
+For example, use logistic-regression model: $ python3 run_bash.py logistic_regression  
 
-I this example, you can get the ROC accuracy and confussion_matrix of the results on WNLI dataset.
+In this example, you can get the ROC accuracy and confussion_matrix of the experiment results on WNLI dataset.
 Note: external_GRU model requires to use glove.6B datasets, size of which is too big to upload here, you can download this dataset and put in the right directory specified in path parameters of python code file. Link: http://nlp.stanford.edu/data/glove.6B.zip 
 
+The very detailed experiment info can be found in report.pdf. Otherwise here is the short version to help you to have a taste:
 
-General information about these models:
 I experimented with Logistic Regression, RNN-GRU (with and without Glove Embeddings) and pre-trained Transformer models on the sequence classification dataset of GLUE-WNLI. We then compared different model architectures’ performances on the pronouns reference disambiguation task. Finally, we discussed this task’s challenges and some related work in the report.
 
 
