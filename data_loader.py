@@ -11,7 +11,7 @@ import os
 
 
 class LabelledTextDataset:
-    def __init__(self, train_file_path, test_file_path):
+    def __init__(self, train_file_path, test_file_path, external=False):
         df1 = pd.read_table(train_file_path).sample(frac=1.0)
         df2 = pd.read_table(test_file_path).sample(frac=1.0)
         test_index = len(df1['sentence1'])
