@@ -1,9 +1,13 @@
 # NLP: different NLP models from linear regression to RNN-GRU and to transformers, experimenting on Glue-WNLI dataset.
 
 By simple command line, you can choose which model you want to experiment on:
-Quick demonstration in command line: $ python3 run_bash.py [-model (logistic_regression GRU external_GRU transformers)]
+Quick demonstration in command line: 
 
-For example, use logistic-regression model: $ python3 run_bash.py logistic_regression  
+$ python3 run_bash.py [-model (logistic_regression GRU external_GRU transformers)]
+
+For example, use logistic-regression model: 
+
+$ python3 run_bash.py logistic_regression  
 
 In this example, you can get the ROC accuracy and confussion_matrix of the experiment results on WNLI dataset.
 # Note: external_GRU model requires to use glove.6B datasets, size of which is too big to upload here, you can download this dataset and put in this directory to run externan_GRU. Link: http://nlp.stanford.edu/data/glove.6B.zip 
