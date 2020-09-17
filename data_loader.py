@@ -11,7 +11,7 @@ import os
 
 
 class LabelledTextDataset:
-    def __init__(self, train_file_path, test_file_path, external=False):
+    def __init__(self, train_file_path, test_file_path):
         df1 = pd.read_table(train_file_path).sample(frac=1.0)
         df2 = pd.read_table(test_file_path).sample(frac=1.0)
         test_index = len(df1['sentence1'])
@@ -32,16 +32,8 @@ class LabelledTextDataset:
         vocab = list(set((x for l in self.df['tokens'] for x in l)))
         self.token_to_id = {vocab[i]: i for i in range(len(vocab))}
         self.id_to_token = {i: vocab[i] for i in range(len(vocab))}
-        # this token to id is for Glove:
-       if external:
-            with open(os.path.join('glove.6B', 'wordtoid.pickle'), 'rb') as f:
-                wordtoid = pickle.load(f)
-            f.close
-            self.df['ids'] = [[wordtoid[t] for t in s if t in wordtoid]
-                              for s in self.df['tokens']]
-        else:
-            self.df['ids'] = [[self.token_to_id[t]
-                               for t in s] for s in self.df['tokens']]
+        self.df['ids'] = [[self.token_to_id[t]
+                           for t in s] for s in self.df['tokens']]
         self.test_df = self.df.iloc[:test_index]
         self.train_df = self.df.iloc[test_index:]
 
