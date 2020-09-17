@@ -18,7 +18,7 @@ for i, item in enumerate(embeddings_index.items()):
     embedding_vector = embeddings_index.get(item[0])
     if embedding_vector is not None:
         embedding_matrix[i] = embedding_vector
-print(" Completed!")
+print(" Completed reading Glov.50d, now starting training.....")
 
 torch.save(embedding_matrix, os.path.join('glove.6B', 'word_embeddings.pth'))
 with open(os.path.join('glove.6B', 'wordtoid.pickle'), 'wb') as f:
