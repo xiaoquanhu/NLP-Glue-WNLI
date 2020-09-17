@@ -24,7 +24,7 @@ class GRUClassifier(nn.Module):
         return self.W(h_final.squeeze(0))
 
 
-dataset = LabelledTextDataset('train.tsv', 'dev.tsv')
+dataset = LabelledTextDataset('train.tsv', 'dev.tsv', external=True)
 model = GRUClassifier(len(dataset.token_to_id), 50, 2)
 optimizer = torch.optim.AdamW(model.parameters(), lr=2e-5)
 
