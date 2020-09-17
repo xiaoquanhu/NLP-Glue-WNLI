@@ -6,7 +6,7 @@ Quick demonstration in command line: $ python3 run_bash.py [-model (logistic_reg
 For example, use logistic-regression model: $ python3 run_bash.py logistic_regression  
 
 In this example, you can get the ROC accuracy and confussion_matrix of the experiment results on WNLI dataset.
-Note: external_GRU model requires to use glove.6B datasets, size of which is too big to upload here, you can download this dataset and put in the right directory specified in path parameters of python code file. Link: http://nlp.stanford.edu/data/glove.6B.zip 
+# Note: external_GRU model requires to use glove.6B datasets, size of which is too big to upload here, you can download this dataset and put in this directory to run externan_GRU. Link: http://nlp.stanford.edu/data/glove.6B.zip 
 
 The very detailed experiment info can be found in report.pdf. Otherwise here is the short version to help you to have a taste:
 
